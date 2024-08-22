@@ -168,9 +168,28 @@
 </section> -->
 <!-- End MaskedKD -->
 
-	
 <!-- Acknowledgements -->
 <section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            MaskedKD is a very simple yet effective approach for reducing supervision cost by masking the teacher input tokens. Given a training image-label sample (x, y), we generate a masked version xmask of the input image by removing some patches of the image x. Then, we train the student by using the following loss: 
+          \begin{equation}
+		\ell(x,y) = \ell_{\mathtt{CE}}(f_S(x),y) + \lambda \cdot \ell_{\mathtt{KD}}(f_S(x),f_T(x_{\mathtt{mask}})),\label{eq:maskedkd}
+	\end{equation}
+	  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Acknowledgements -->
+<section class="section hero-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
