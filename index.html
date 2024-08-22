@@ -177,9 +177,10 @@
         <div class="content has-text-justified">
           <p>
             MaskedKD is a very simple yet effective approach for reducing supervision cost by masking the teacher input tokens. Given a training image-label sample (x, y), we generate a masked version xmask of the input image by removing some patches of the image x. Then, we train the student by using the following loss: 
-          \begin{equation}
-		\ell(x,y) = \ell_{\mathtt{CE}}(f_S(x),y) + \lambda \cdot \ell_{\mathtt{KD}}(f_S(x),f_T(x_{\mathtt{mask}})),\label{eq:maskedkd}
-	\end{equation}
+		\begin{align}
+		  ℓ(x, y) = ℓ<sub>CE</sub>(f<sub>S</sub>(x), y) + λ ⋅ ℓ<sub>KD</sub>(f<sub>S</sub>(x), f<sub>T</sub>(x<sub>mask</sub>)),
+		/end{align}
+
 	  </p>
         </div>
       </div>
