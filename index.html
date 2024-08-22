@@ -181,7 +181,7 @@ MathJax = {
 </section> -->
 <!-- End MaskedKD -->
 
-<!-- Acknowledgements -->
+<!-- Framework -->
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -197,7 +197,7 @@ MathJax = {
 		\begin{equation}
 		\ell(x,y) = \ell_{\mathtt{CE}}(f_S(x),y) + \lambda \cdot \ell_{\mathtt{KD}}(f_S(x),f_T(x_{\mathtt{mask}})),\label{eq:maskedkd}
 		\end{equation}
-	    where $ℓ_{CE}$ denotes the cross-entropy loss, $ℓ_{KD}$ denotes the distillation loss, and $λ ≥ 0$ is a balancing hyperparameter.
+	    where $ℓ_{CE}$ denotes the cross-entropy loss, $ℓ_{KD}$ denotes the distillation loss, and $λ ≥ 0$ is a balancing hyperparameter.<br>
 	    <b>Student-guided saliency score.</b> To select the patches to be masked, we use the last layer attention scores of the student ViT as the patch saliency score:
 	   \begin{align}
 	   \mathbf{a}^{(h)} = \mathrm{Softmax}\left( \big(q_{\mathtt{cls}}^\top k_1,\:q_{\mathtt{cls}}^\top k_2,\:\cdots,\:q_{\mathtt{cls}}^\top k_N\big) / \sqrt{d}\right), \quad h \in \{1,2,\ldots,H\}
@@ -210,6 +210,25 @@ MathJax = {
   </div>
 </section>
 
+<!-- Main result -->
+<section class="section hero-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Main Result</h2>
+        <div class="content has-text-justified">
+		<img src="./static/images/main_result.png"
+		class="interpolation-image"
+		alt="Interpolate start reference image."
+		style="max-width: 100%;"/>
+          <p>
+          MaskedKD dramatically reduces the supervision cost without degrading the student accuracy. We also observe that, in most cases, masking a small fraction of patches is beneficial for the performance of the trained student.
+	  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Acknowledgements -->
 <section class="section hero-light">
