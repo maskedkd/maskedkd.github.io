@@ -177,9 +177,19 @@
         <div class="content has-text-justified">
           <p>
             MaskedKD is a very simple yet effective approach for reducing supervision cost by masking the teacher input tokens. Given a training image-label sample (x, y), we generate a masked version xmask of the input image by removing some patches of the image x. Then, we train the student by using the following loss: 
-	    \begin{align}
+            \begin{align}
 		ℓ(x, y) = ℓ<sub>CE</sub>(f<sub>S</sub>(x), y) + λ ⋅ ℓ<sub>KD</sub>(f<sub>S</sub>(x), f<sub>T</sub>(x<sub>mask</sub>)),
             \end{align}
+	    We aim to find the weights <em>in the multi-task vector</em> \(\boldsymbol{\tau}_{\text{MTL}}\) that are
+            important for each task. We do this by developping a sparse binary mask \(\boldsymbol{m}_t\) for each task
+            \(t\) that approximates functionally the original task vector \(\boldsymbol{\tau}_t\). The mask is defined
+            as:
+            \begin{align}
+            \boldsymbol{m}_t = \unicode{x1D7D9} \left\{|\boldsymbol{\tau}_t| \geq |\boldsymbol{\tau}_{\text{MTL}} -
+            \boldsymbol{\tau}_t| * \lambda_t \right\}
+            \end{align}
+            where \(\lambda_t\) is a threshold parameter that controls the sparsity of the mask and is set via a
+            held-out validation set.
 	  </p>
         </div>
       </div>
