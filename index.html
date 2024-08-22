@@ -146,15 +146,21 @@
 <!-- End paper abstract -->
 
 <!-- MaskedKD -->
-<section class="section hero is-light">
+<section class="section hero is">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Masked Knowledge Distillation</h2>
         <div class="content has-text-justified">
           <p>
-		  We develop a very simple yet effective approach to dramatically reduce the supervision cost of supervised ViT distillation, called MaskedKD (Masked Knowledge Distillation). MaskedKD can be combined with various distillation algorithms to cut down the ViT supervision cost by 25-50% without any degradation in accuracy, over various model architectures.    
+		  MaskedKD (Masked Knowledge Distillation) is a very simple yet effective approach to dramatically reduce the supervision cost of supervised ViT distillation. MaskedKD can be combined with various distillation algorithms to cut down the ViT supervision cost by 25-50% without any degradation in accuracy, over various model architectures.  
+		  Through an in-depth analysis, we have observed the following facts:
 	  </p>
+	<ul>
+	  <li>Student-guided masking provides a distillation curriculum, enhancing the student training.</li>
+	  <li>Masking the tokens at input preserved the supervision quality better than gradually removing tokens in the intermediate layers</li>
+	  <li>In supervised knowledge distillation, masking the teacher model is beneficial, as masking the student significantly degrades accuracy, contrary to standard mask-based SSL practices.</li>
+	</ul>
         </div>
       </div>
     </div>
@@ -164,7 +170,7 @@
 
 	
 <!-- Acknowledgements -->
-<section class="section hero">
+<section class="section hero-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
