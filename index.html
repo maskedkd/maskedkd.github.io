@@ -178,8 +178,9 @@
           <p>
             MaskedKD is a very simple yet effective approach for reducing supervision cost by masking the teacher input tokens. Given a training image-label sample (x, y), we generate a masked version xmask of the input image by removing some patches of the image x. Then, we train the student by using the following loss: 
             <p align="center">
-		ℓ(x, y) = ℓ<sub>CE</sub>(f<sub>S</sub>(x), y) + λ ⋅ ℓ<sub>KD</sub>(f<sub>S</sub>(x), f<sub>T</sub>(x<sub>mask</sub>)),
+		$ℓ(x, y) = ℓ<sub>CE</sub>(f<sub>S</sub>(x), y) + λ ⋅ ℓ<sub>KD</sub>(f<sub>S</sub>(x), f<sub>T</sub>(x<sub>mask</sub>))$,
             </p>
+	    where $ℓ_CE$ denotes the cross-entropy loss, $ℓ_KD$ denotes the distillation loss, and $λ ≥ 0$ is a balancing hyperparameter.
 	  </p>
         </div>
       </div>
