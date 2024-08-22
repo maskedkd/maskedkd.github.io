@@ -42,6 +42,19 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
 </head>
 <body>
 
@@ -180,7 +193,7 @@
             <p align="center">
 		$ℓ(x, y) = ℓ<sub>CE</sub>(f<sub>S</sub>(x), y) + λ ⋅ ℓ<sub>KD</sub>(f<sub>S</sub>(x), f<sub>T</sub>(x<sub>mask</sub>))$,
             </p>
-	    where $ℓ_CE$ denotes the cross-entropy loss, $ℓ_KD$ denotes the distillation loss, and $λ ≥ 0$ is a balancing hyperparameter.
+	    where $ℓ_{CE}$ denotes the cross-entropy loss, $ℓ_{KD}$ denotes the distillation loss, and $λ ≥ 0$ is a balancing hyperparameter.
 	  </p>
         </div>
       </div>
