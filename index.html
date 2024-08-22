@@ -232,6 +232,39 @@ MathJax = {
   </div>
 </section>
 
+<!-- Closer look -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">A Closer Look at MaskedKD</h2>
+        <div class="content has-text-justified">
+  	<p>
+	To answer why the proposed student-guided masking works well, we conduct an in-depth comparative analysis. Our observations can be summarized as follows:
+		<ul>
+		  <li>Student-guided masking provides a good curriculum for distillation, enhancing the student training.</li>
+		  <li>Masking the tokens at input preserved the supervision quality better than gradually removing tokens in the intermediate layers</li>
+		  <li>In supervised knowledge distillation, masking the teacher model is beneficial, as masking the student significantly degrades accuracy, contrary to standard mask-based SSL practices.</li>
+		</ul>
+	</p>
+	<img src="./static/images/teacher_acc.png"
+	class="interpolation-image"
+	alt="Interpolate start reference image."
+	style="max-width: 100%;"/>
+	<p>
+	Compared with various masking mechanisms, student-guided masking 
+	</p>
+	<img src="./static/images/ablation.png"
+	class="interpolation-image"
+	alt="Interpolate start reference image."
+	style="max-width: 100%;"/>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+	
 <!-- Acknowledgements -->
 <section class="section hero-light">
   <div class="container is-max-desktop">
