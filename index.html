@@ -252,13 +252,17 @@ MathJax = {
 	alt="Interpolate start reference image."
 	style="max-width: 100%;"/>
 	<p>
-	Compared with various masking mechanisms, student-guided masking 
+	Compared with various masking mechanisms, student-guided masking sole approach that maintains or improves compared with traditional logit distillation, which acts as an implicit curriculum for distillation.
+	During the early stage of training, masking makes the teachers less accurate, making it easier for the student to mimic their predictions.
 	</p>
 	<img src="./static/images/ablation.png"
 	class="interpolation-image"
 	alt="Interpolate start reference image."
 	style="max-width: 100%;"/>
-
+	<p> 
+		(Left & Mid) Masking tokens at input is effective for preserving supervision quality while removing tokens at intermediate layers is better for keeping high prediction quality. <br>
+		(Right) Even at the low masking ratio, masking student degrades the final accuracy after distillation, while masking teacher does not. This contrasts with mask-based SSL, where masking student is essential.
+	</p>
         </div>
       </div>
     </div>
